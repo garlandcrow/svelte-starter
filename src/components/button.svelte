@@ -10,4 +10,10 @@
   }
 </script>
 
-<button class="button bg-blue-700 text-white rounded px-2 py-1" on:click={onClick}>{text}</button>
+<button class="button bg-blue-700" on:click={onClick}>{text}</button>
+
+<style>
+  .button {
+    @apply text-white rounded px-2 py-1;
+  }
+</style>
