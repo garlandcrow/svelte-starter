@@ -2279,7 +2279,7 @@ node-releases@^1.1.53:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.53.tgz#2d821bfa499ed7c5dffc5e2f28c88e78a08ee3f4"
   integrity sha512-wp8zyQVwef2hpZ/dJH7SfSrIPD6YoJz6BDQDpGEkcA0s3LpAQoxBIYmfIq6QAhC1DhwsyCgTaTTcONwX8qzCuQ==
 
-nollup@>=0.8.4, nollup@^0.10.6:
+nollup@>=0.8.4:
   version "0.10.7"
   resolved "https://registry.yarnpkg.com/nollup/-/nollup-0.10.7.tgz#cf14ebb4d4a254e92dd4c7a323eec9c71a9e47dc"
   integrity sha512-z6Rtq+FiXNFZYx2VT3F1VeWy6plYM54jDmhYgAAPTZEdcnRk9seV9qQTbAjhRUoNMF8sFIdUdEoEQEVLTAaIVQ==

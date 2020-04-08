@@ -7,7 +7,6 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "babel-loader": "^8.1.0",
     "cross-env": "^6.0.3",
-    "nollup": "^0.10.6",
     "prettier": "^2.0.4",
     "prettier-plugin-svelte": "^0.7.0",
     "rollup": "^1.31.1",
@@ -28,8 +27,8 @@
     "build": "rollup -c",
     "dev:rollup": "rollup -c -w",
     "dev:livereload": "cross-env LIVERELOAD=1 rollup -c -w",
-    "dev:nollup": "cross-env NOLLUP=1 nollup -c --hot --port 5000 --content-base ./public",
     "dev": "npm run dev:rollup",
-    "start": "sirv public"
+    "start": "sirv public",
+    "postinstall": "yarn build"
   }
 }

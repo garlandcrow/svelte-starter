@@ -12,17 +12,9 @@ import autoPreprocess from 'svelte-preprocess'
 // Set this to true to pass the --single flag to sirv (this serves your
 // index.html for any unmatched route, which is a requirement for SPA
 // routers using History API / pushState)
-//
-// NOTE This will have no effect when running with Nollup. For Nollup, you'd
-// have to add the --history-api-fallback yourself in your package.json
-// scripts (see: https://github.com/PepsRyuu/nollup/#nollup-options)
-//
+
 const spa = false
 
-// NOTE The NOLLUP env variable is picked by various HMR plugins to switch
-// in compat mode. You should not change its name (and set the env variable
-// yourself if you launch nollup with custom comands).
-const nollup = !!process.env.NOLLUP
 const watch = !!process.env.ROLLUP_WATCH
 const useLiveReload = !!process.env.LIVERELOAD
 
@@ -92,7 +84,7 @@ export default {
 
     // In dev mode, call `npm run start:dev` once
     // the bundle has been generated
-    dev && !nollup && serve(),
+    dev && serve(),
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
