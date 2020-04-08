@@ -1,19 +1,20 @@
-import App from "./App.svelte";
-import "smelte/src/tailwind.css";
+import App from './App.svelte'
+import 'smelte/src/tailwind.css'
+import './Styles.svelte'
 
 const app = new App({
   target: document.body,
   props: {
-    name: "world"
-  }
-});
+    name: 'world',
+  },
+})
 
-export default app;
+export default app
 
 // recreate the whole app if an HMR update touches this module
 if (import.meta.hot) {
   import.meta.hot.dispose(() => {
-    app.$destroy();
-  });
-  import.meta.hot.accept();
+    app.$destroy()
+  })
+  import.meta.hot.accept()
 }

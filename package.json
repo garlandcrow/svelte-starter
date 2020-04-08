@@ -2,8 +2,10 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "babel-loader": "^8.1.0",
     "cross-env": "^6.0.3",
     "nollup": "^0.10.6",
     "rollup": "^1.31.1",
@@ -13,7 +15,8 @@
     "rollup-plugin-svelte-hot": "^0.4.0",
     "rollup-plugin-terser": "^5.1.2",
     "smelte": "^1.0.12",
-    "svelte": "~3.19.0",
+    "svelte": "^3.20.1",
+    "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^3.7.1"
   },
   "dependencies": {
