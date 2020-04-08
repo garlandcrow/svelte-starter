@@ -1,7 +1,7 @@
 const autoPreprocess = require('svelte-preprocess')
 
 module.exports = {
-  stories: ['../src/**/*.stories.js'],
+  stories: ['./config.js', '../src/**/*.stories.js'],
   addons: ['@storybook/addon-actions', '@storybook/addon-links'],
   webpackFinal: (config) => {
     const svelteLoader = config.module.rules.find(
