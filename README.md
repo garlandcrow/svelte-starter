@@ -1,4 +1,8 @@
-# Caveats
+# Description
+
+Starter template for Svelte w/ HMR, Smelte, Tailwindcss, and Postcss.
+
+## Caveats
 
 - HMR doesn't work with CSS so you need to run `yarn build` initially to generate the `global.css` file (tailwind styles) and `bundle.css` (svlete `:global` styles) and again if you change anything with the tailwind config or add/change a `:global` style.
 
