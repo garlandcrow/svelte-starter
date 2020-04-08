@@ -1,13 +1,13 @@
-import svelte from "rollup-plugin-svelte-hot";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
-import hmr, { autoCreate } from "rollup-plugin-hot";
+import svelte from 'rollup-plugin-svelte-hot'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import livereload from 'rollup-plugin-livereload'
+import { terser } from 'rollup-plugin-terser'
+import hmr, { autoCreate } from 'rollup-plugin-hot'
 
-import postcss from "rollup-plugin-postcss";
-import smelte from "smelte/rollup-plugin-smelte";
-import autoPreprocess from "svelte-preprocess";
+import postcss from 'rollup-plugin-postcss'
+import smelte from 'smelte/rollup-plugin-smelte'
+import autoPreprocess from 'svelte-preprocess'
 
 // Set this to true to pass the --single flag to sirv (this serves your
 // index.html for any unmatched route, which is a requirement for SPA
@@ -17,27 +17,27 @@ import autoPreprocess from "svelte-preprocess";
 // have to add the --history-api-fallback yourself in your package.json
 // scripts (see: https://github.com/PepsRyuu/nollup/#nollup-options)
 //
-const spa = false;
+const spa = false
 
 // NOTE The NOLLUP env variable is picked by various HMR plugins to switch
 // in compat mode. You should not change its name (and set the env variable
 // yourself if you launch nollup with custom comands).
-const nollup = !!process.env.NOLLUP;
-const watch = !!process.env.ROLLUP_WATCH;
-const useLiveReload = !!process.env.LIVERELOAD;
+const nollup = !!process.env.NOLLUP
+const watch = !!process.env.ROLLUP_WATCH
+const useLiveReload = !!process.env.LIVERELOAD
 
-const dev = watch || useLiveReload;
-const production = !dev;
+const dev = watch || useLiveReload
+const production = !dev
 
-const hot = watch && !useLiveReload;
+const hot = watch && !useLiveReload
 
 export default {
-  input: "src/main.js",
+  input: 'src/main.js',
   output: {
     sourcemap: true,
-    format: "iife",
-    name: "app",
-    file: "public/build/bundle.js",
+    format: 'iife',
+    name: 'app',
+    file: 'public/build/bundle.js',
   },
   plugins: [
     svelte({
@@ -49,7 +49,7 @@ export default {
       // NOTE extracting CSS doesn't work with HMR, so we're inlining when hot
       ...(!hot && {
         css: (css) => {
-          css.write("public/build/bundle.css");
+          css.write('public/build/bundle.css')
         },
       }),
 
@@ -69,8 +69,8 @@ export default {
 
     smelte({
       purge: production,
-      output: "public/global.css",
-      tailwind: require("./tailwind.custom"),
+      output: 'public/global.css',
+      tailwind: require('./tailwind.custom'),
     }),
 
     // If you have external dependencies installed from
@@ -87,7 +87,7 @@ export default {
 
     production &&
       postcss({
-        exclude: "node_modules/**",
+        exclude: 'node_modules/**',
       }),
 
     // In dev mode, call `npm run start:dev` once
@@ -96,7 +96,7 @@ export default {
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    useLiveReload && livereload("public"),
+    useLiveReload && livereload('public'),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
@@ -107,14 +107,14 @@ export default {
     // hang indefinitely after you've tried to import a missing file.
     hot &&
       autoCreate({
-        include: "src/**/*",
+        include: 'src/**/*',
         // Set false to prevent recreating a file that has just been
         // deleted (Rollup watch will crash when you do that though).
         recreate: true,
       }),
 
     hmr({
-      public: "public",
+      public: 'public',
       inMemory: true,
       // This is needed, otherwise Terser (in npm run build) chokes
       // on import.meta. With this option, the plugin will replace
@@ -126,24 +126,24 @@ export default {
   watch: {
     clearScreen: false,
   },
-};
+}
 
 function serve() {
-  let started = false;
+  let started = false
   return {
-    name: "svelte/template:serve",
+    name: 'svelte/template:serve',
     writeBundle() {
       if (!started) {
-        started = true;
-        const flags = ["run", "start", "--", "--dev"];
+        started = true
+        const flags = ['run', 'start', '--', '--dev']
         if (spa) {
-          flags.push("--single");
+          flags.push('--single')
         }
-        require("child_process").spawn("npm", flags, {
-          stdio: ["ignore", "inherit", "inherit"],
+        require('child_process').spawn('npm', flags, {
+          stdio: ['ignore', 'inherit', 'inherit'],
           shell: true,
-        });
+        })
       }
     },
-  };
+  }
 }
