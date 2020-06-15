@@ -1,0 +1,44 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-centered": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/svelte": "^5.3.18",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^6.0.3",
+    "postcss": "^7.0.32",
+    "postcss-load-config": "^2.1.0",
+    "prettier": "^2.0.4",
+    "prettier-plugin-svelte": "^0.7.0",
+    "rollup": "^1.31.1",
+    "rollup-plugin-hot": "^0.0.14",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-postcss": "^2.5.0",
+    "rollup-plugin-svelte-hot": "^0.4.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "svelte": "^3.20.1",
+    "svelte-loader": "^2.13.6",
+    "svelte-preprocess": "^3.9.7",
+    "tailwindcss": "^1.4.6"
+  },
+  "dependencies": {
+    "sirv-cli": "^0.4.4"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev:rollup": "rollup -c -w",
+    "dev:livereload": "cross-env LIVERELOAD=1 rollup -c -w",
+    "dev": "npm run dev:rollup",
+    "start": "sirv public",
+    "postinstall": "yarn build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}
