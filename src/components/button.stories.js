@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import '../Styles.svelte'
+import '../Tailwind.svelte'
 import Button from './button.svelte'
 
 export default {
