@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import typescript from '@rollup/plugin-typescript'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import hmr, { autoCreate } from 'rollup-plugin-hot'
@@ -107,6 +108,7 @@ export default {
       // nothing else.
       compatModuleHot: !hot,
     }),
+    typescript({ sourceMap: !production }),
   ],
   watch: {
     clearScreen: false,

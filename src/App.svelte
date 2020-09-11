@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import Tailwind from './Tailwind.svelte'
-
-  export let name
+  import iamTypescript from './helpers'
+  export let name: string = iamTypescript()
 </script>
 
 <Tailwind />

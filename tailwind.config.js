@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  purge: ['./src/**/*.svelte'],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   theme: {
     extend: {
       colors: {
@@ -28,12 +32,12 @@ module.exports = {
         },
       },
       spacing: {
-        '72': '18rem',
-        '84': '21rem',
-        '96': '24rem',
-        '108': '24rem',
-        '120': '28rem',
-        '192': '48rem',
+        72: '18rem',
+        84: '21rem',
+        96: '24rem',
+        108: '24rem',
+        120: '28rem',
+        192: '48rem',
         '1/2': '50%',
       },
     },
@@ -41,5 +45,5 @@ module.exports = {
   variants: {
     textColor: ['hover'],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/ui')],
 }
